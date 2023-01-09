@@ -1,0 +1,12 @@
+<div class="py-4 px-6 border rounded flex flex-col mb-2 items-center">
+    <img [src]="product.image" alt="img" class="w-1/6 m-2">
+    <h2 class="text-lg text-center">{{product.title}}</h2>
+    <p>Price: {{product.price | currency}}</p>
+
+    <button 
+    class="border p-2 rounded bg-yellow-400" 
+    (click)="details = !details">
+        {{details? 'Hide' : 'Show'}} details
+    </button>
+    <p *ngIf="details">{{product.description}}</p>
+</div>
